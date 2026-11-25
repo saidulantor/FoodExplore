@@ -24,9 +24,20 @@ body.about-page {
 }
 
 @media (max-width: 760px) {
-    .about-page .navbar { justify-content: center; }
-    .about-page .nav-links { flex-wrap: wrap; justify-content: center; gap: 6px; }
-    .about-page .nav-links a { font-size: 16px; padding: 6px 12px; }
+    .about-page .navbar {
+        justify-content: center;
+    }
+
+    .about-page .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .about-page .nav-links a {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
 }
 
 /* ===== Hero ===== */
@@ -109,6 +120,12 @@ body.about-page {
     background: var(--tint);
     border-left: 5px solid var(--orange);
     border-radius: 12px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.fact:hover {
+    transform: translateX(6px);
+    box-shadow: 0 8px 20px rgba(244, 105, 5, 0.15);
 }
 
 .fact-num {
@@ -117,6 +134,11 @@ body.about-page {
     font-weight: 600;
     color: var(--orange-deep);
     min-width: 64px;
+    transition: transform 0.2s ease;
+}
+
+.fact:hover .fact-num {
+    transform: scale(1.08);
 }
 
 .fact-label {
@@ -146,7 +168,22 @@ body.about-page {
     border: 1px solid var(--line);
     border-radius: 16px;
     background: #fff;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--orange);
+    box-shadow: 0 14px 28px rgba(244, 105, 5, 0.14);
+}
+
+.why-icon {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.why-card:hover .why-icon {
+    transform: scale(1.2) rotate(6deg);
 }
 
 .why-card:hover {
@@ -212,8 +249,15 @@ body.about-page {
     font-size: 16px;
 }
 
-.hours-table th { font-weight: 600; }
-.hours-table td { text-align: right; color: var(--orange-dark); font-weight: 600; }
+.hours-table th {
+    font-weight: 600;
+}
+
+.hours-table td {
+    text-align: right;
+    color: var(--orange-dark);
+    font-weight: 600;
+}
 
 .note {
     margin-top: 16px;
@@ -235,7 +279,9 @@ body.about-page {
     font-size: 16px;
 }
 
-.contact-list li:last-child { border-bottom: none; }
+.contact-list li:last-child {
+    border-bottom: none;
+}
 
 .c-label {
     font-size: 14px;
@@ -285,11 +331,25 @@ body.about-page {
 
 /* ===== Responsive ===== */
 @media (max-width: 860px) {
-    .story { grid-template-columns: 1fr; gap: 28px; }
-    .why-grid { grid-template-columns: 1fr; }
-    .visit { grid-template-columns: 1fr; }
+    .story {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .visit {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .why-card, .why-card:hover { transition: none; transform: none; }
+
+    .why-card,
+    .why-card:hover {
+        transition: none;
+        transform: none;
+    }
 }
