@@ -76,12 +76,13 @@ body.contact-page {
     border: 1px solid var(--line);
     border-radius: 16px;
     background: #fff;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .quick-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 28px rgba(244, 105, 5, 0.14);
+    transform: translateY(-6px);
+    border-color: var(--orange);
+    box-shadow: 0 16px 32px rgba(244, 105, 5, 0.16);
 }
 
 .q-icon {
@@ -94,6 +95,13 @@ body.contact-page {
     background: var(--tint);
     border-radius: 14px;
     margin-bottom: 14px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+.quick-card:hover .q-icon {
+    transform: scale(1.12) rotate(4deg);
+    background: var(--orange);
+    color: #fff;
 }
 
 .quick-card h2 {
@@ -190,10 +198,18 @@ body.contact-page {
     border-radius: 999px;
     padding: 13px 30px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.send-btn:hover { background: var(--orange-dark); }
+.send-btn:hover {
+    background: var(--orange-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(214, 88, 0, 0.3);
+}
+
+.send-btn:active {
+    transform: scale(0.96);
+}
 
 .send-btn:focus-visible,
 .linkedin-btn:focus-visible,
